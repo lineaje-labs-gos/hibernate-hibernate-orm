@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.hibernate</groupId>
   <artifactId>hibernate-core</artifactId>
@@ -77,9 +76,10 @@
     <url>https://hibernate.atlassian.net/browse/HHH</url>
   </issueManagement>
   <scm>
-    <url>http://github.com/hibernate/hibernate-orm</url>
-    <connection>scm:git:http://github.com/hibernate/hibernate-orm.git</connection>
-    <developerConnection>scm:git:git@github.com:hibernate/hibernate-orm.git</developerConnection>
+    <connection>scm:git:hibernate-hibernate-orm</connection>
+    <developerConnection>scm:git:hibernate-hibernate-orm</developerConnection>
+    <url>hibernate-hibernate-orm</url>
+    <tag>4.3.11.Final-lineaje-01</tag>
   </scm>
   <licenses>
     <license>
@@ -97,4 +97,34 @@
       <organizationUrl>http://hibernate.org</organizationUrl>
     </developer>
   </developers>
+  <contributors>
+    <contributor>
+      <name>Lineaje DepFixer</name>
+      <email>221268890+Lineaje-DepFixer@users.noreply.github.com</email>
+    </contributor>
+  </contributors>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>3.2.4</version>
+        <executions>
+          <execution>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>sign</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <gpgArguments>
+            <arg>--pinentry-mode</arg>
+            <arg>loopback</arg>
+          </gpgArguments>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 </project>
